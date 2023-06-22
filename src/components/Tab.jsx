@@ -17,7 +17,7 @@ function Tab({ item, path }) {
     <Link
       href={href}
       className={`text-white rounded px-2 py-1 transition hover:bg-blue-600 cursor-pointer ${
-        isActive ? "bg-blue-500" : "bg-gray-300"
+        isActive ? "bg-blue-500" : "bg-gray-400"
       }`}
     >
       {item.name}
