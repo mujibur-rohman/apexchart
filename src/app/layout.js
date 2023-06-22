@@ -17,8 +17,9 @@ export default function RootLayout({ children }) {
         <main className="flex justify-center mt-10 px-10">
           <div className="p-5 border-[1px] rounded-lg w-full">
             <TabGroup
+              path="/"
               items={[
-                { name: "Home", slug: "/" },
+                { name: "Home" },
                 ...CHARTS_NAME.filter((item) => item.parent === null),
               ]}
             />

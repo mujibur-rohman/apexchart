@@ -1,16 +1,20 @@
 "use client";
 import { CHARTS_NAME } from "@/constant/namechart";
 import React from "react";
-import ReactApexChart from "react-apexcharts";
+import dynamic from "next/dynamic";
 
-function BarChart() {
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+  ssr: false,
+});
+
+function Charts() {
   return (
     <div className="grid grid-cols-2 gap-3">
-      {CHARTS_NAME.filter((item) => item.data).map((item) => {
+      {CHARTS_NAME.filter((item) => item.data).map((item, i) => {
         return (
-          <div key={item.slug} className="border-[1px] p-1 rounded">
+          <div key={i} className="border-[1px] p-1 rounded">
             <ReactApexChart
-              type="bar"
+              type={item.type}
               series={item.data?.series}
               options={item.data?.options}
             />
@@ -22,4 +26,4 @@ function BarChart() {
   );
 }
 
-export default BarChart;
+export default Charts;
