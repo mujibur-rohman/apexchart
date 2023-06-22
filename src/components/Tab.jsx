@@ -1,7 +1,6 @@
 "use client";
-import getPathName from "@/lib/getPathnameIndex";
 import Link from "next/link";
-import { usePathname, useSelectedLayoutSegment } from "next/navigation";
+import { useSelectedLayoutSegment } from "next/navigation";
 import React from "react";
 
 function Tab({ item, path }) {
@@ -12,10 +11,8 @@ function Tab({ item, path }) {
     : path;
 
   const segment = useSelectedLayoutSegment();
-  const pathname = usePathname();
   const isActive = item.slug ? segment === item.slug : segment === null;
 
-  console.log(segment);
   return (
     <Link
       href={href}
