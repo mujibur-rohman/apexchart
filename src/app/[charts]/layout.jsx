@@ -4,10 +4,6 @@ import { CHARTS_NAME } from "@/constant/namechart";
 import getPathName from "@/lib/getPathnameIndex";
 import { usePathname } from "next/navigation";
 
-export const metadata = {
-  title: "Bar Charts",
-};
-
 export default function Layout({ children }) {
   const pathname = usePathname();
 

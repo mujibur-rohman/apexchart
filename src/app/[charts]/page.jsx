@@ -11,7 +11,6 @@ const ReactApexChart = dynamic(() => import("react-apexcharts"), {
 
 function Charts() {
   const pathname = usePathname();
-  console.log(getPathName(pathname, 0));
   return (
     <div className="grid grid-cols-2 gap-3">
       {CHARTS_NAME.filter(
